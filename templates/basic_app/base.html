@@ -23,6 +23,16 @@
           <li>
             <a class="navbar-link" href="#">OTHER</a>
           </li>
+
+          {% if user.is_authenticated %}
+          <li>
+            <a class="navbar-link" href="{% url 'logout' %}">logout</a>
+          </li>
+          {% else %}
+          <li>
+            <a class="navbar-link" href="{% url 'user_login'%}">login</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
     </nav>
